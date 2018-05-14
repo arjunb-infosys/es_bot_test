@@ -1,5 +1,5 @@
 module.exports = {	
-	accessToken: "82717e62013740298f1660b33799f445",
+	accessToken: "761f38d577be49de9f2816a2ee7b9d14",
     dialogflowAPI : "https://api.api.ai/v1/query?v=20150910",
 	
 }

@@ -39,7 +39,7 @@ router.post('/botHandler',function(req, res){
 			})
 			break;
 		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){			
-			res.json(simpleResponse("Hi ,welcome to hexaware leave bot")).end();
+			res.json(simpleResponse("Hi ,welcome to hexaware leave bot.How can I assist you?")).end();
 			break;
 		}
 	}

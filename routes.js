@@ -19,12 +19,12 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login',function(req,res){
-	console.log("--------> sessionId <---------"+req.sessionId);
+	console.log("--------> sessionId <---------"+req.session.id);
 	res.sendFile('public/login.html',{root: __dirname});
 })
 
 router.post('/botHandler',function(req, res){
-		console.log("--------++ sessionId ++---------"+req.sessionId);
+		console.log("--------++ sessionId ++---------"+req.session.id);
 	console.log('req received');
 	console.log(JSON.stringify(req.body));
 	var len = req.body.inputs.length;

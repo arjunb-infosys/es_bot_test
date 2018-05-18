@@ -50,8 +50,8 @@ router.post('/botHandler',function(req, res){
 		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){	
 				req.session.userName="srihi";
 	console.log("****req.session.userName*******"+req.session.userName);
-		//	res.json(simpleResponse("Hi, I am leavebody what can I do for you")).end();
-		res.send({
+			res.json(simpleResponse("Hi, I am leavebody what can I do for you")).end();
+		/*res.send({
 			"conversationToken": "",
 			"expectUserResponse": true,
 			"expectedInputs": [
@@ -94,7 +94,7 @@ router.post('/botHandler',function(req, res){
 					]
 				}
 			]
-		}).end();
+		}).end();*/
 			break;
 		}
 	}

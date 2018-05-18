@@ -25,7 +25,18 @@ router.get('/login',function(req,res){
 })
 
 router.post('/testingLogin',function(req,res){
-res.json(simpleResponse("Hi, I am leave bot buddy what can I do for you")).end();
+//res.json(simpleResponse("Hi, I am leave bot buddy what can I do for you")).end();
+	dialogflowAPI('Get my total leaves')
+			.then(function(resp){
+				console.log(JSON.stringify(resp.result.fulfillment));
+				resp.result.fulfillment.messages.forEach(function(message){
+							
+					if(message.platform=='google'&&message.type=="simple_response"){
+						res.json(simpleResponse(message.textToSpeech)).end();
+					}					
+				})
+				
+			})
 });
 
 router.post('/botHandler',function(req, res){

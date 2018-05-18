@@ -22,7 +22,7 @@ router.post('/botHandler',function(req, res){
 	let referer = req.get('Referer');
 	console.log('referer');
 	console.log(referer);
-	res.sendFile('public/html/login.html', {root: __dirname});
+	res.sendFile('login.html', {root: __dirname});
 	var len = req.body.inputs.length;
 	for(i=0; i<len; i++){		
 		console.log(req.body.inputs[i].intent);

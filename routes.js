@@ -1,5 +1,7 @@
 var express 		= require('express');
-var router			= express.Router();	 
+var session = require('express-session');
+var router			= express.Router();	
+router.use(session({secret: 'ssshhhhh'}));
 var request			= require('request');	
 var fs 				= require("fs");	
 var request			= require('request');
@@ -17,11 +19,12 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login',function(req,res){
+	console.log("--------> sessionId <---------"+req.sessionId);
 	res.sendFile('public/login.html',{root: __dirname});
 })
 
 router.post('/botHandler',function(req, res){
-	
+		console.log("--------++ sessionId ++---------"+req.sessionId);
 	console.log('req received');
 	console.log(JSON.stringify(req.body));
 	var len = req.body.inputs.length;

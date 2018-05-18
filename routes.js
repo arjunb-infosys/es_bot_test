@@ -50,8 +50,8 @@ console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){	
 				req.body.conversation.uName="srihi";
 	console.log("****req.session.userName*******"+req.body.conversation.uName);
-			res.json(simpleResponse("Hi, I am leavebody what can I do for you")).end();
-		/*res.send({
+			//res.json(simpleResponse("Hi, I am leavebody what can I do for you")).end();
+		res.send({
 			"conversationToken": "",
 			"expectUserResponse": true,
 			"expectedInputs": [
@@ -94,7 +94,7 @@ console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 					]
 				}
 			]
-		}).end();*/
+		}).end();
 			break;
 		}
 	}

@@ -34,7 +34,7 @@ router.post('/botHandler',function(req, res){
 		console.log(req.body.inputs[i].intent);
 		if(req.body.inputs[i].intent == 'actions.intent.TEXT'){
 			
-	console.log("****req.session.userName*******"+req.session.userName);
+	console.log("^^^^^^req.session.userName^^^^^^"+req.session.userName);
 			dialogflowAPI(req.body.inputs[i].rawInputs[0].query)
 			.then(function(resp){
 				console.log(JSON.stringify(resp.result.fulfillment));

@@ -34,7 +34,7 @@ console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 		console.log(req.body.inputs[i].intent);
 		if(req.body.inputs[i].intent == 'actions.intent.TEXT'){
 			
-	console.log("^^^^^^req.session.userName^^^^^^"+req.body.conversation.uName);
+	console.log("^^^^^^req.session^^^^^^",req.session);
 			dialogflowAPI(req.body.inputs[i].rawInputs[0].query)
 			.then(function(resp){
 				console.log(JSON.stringify(resp.result.fulfillment));
@@ -48,8 +48,11 @@ console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 			})
 			break;
 		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){	
-				req.body.conversation.uName="srihi";
-	console.log("****req.session.userName*******"+req.body.conversation.uName);
+				var mySess=req.session;
+		mySess['1526638805002']={
+			'userName':"hari"
+			,'password':"testVal"
+		};
 			//res.json(simpleResponse("Hi, I am leavebody what can I do for you")).end();
 		res.send({
 			"conversationToken": "",

@@ -2,15 +2,14 @@
     <script>
         function testFn(){
               var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+ /* xhttp.onreadystatechange = function() { // response handling
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo").innerHTML = this.responseText;
     }
-  };
-  xhttp.open("POST", "demo_post.asp", true);
+  };*/
+  xhttp.open("POST", "testingLogin", true);
   xhttp.send();
-            alert("in");
-        window.close();
+  window.close();
         }
     </script>
     <body>

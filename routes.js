@@ -66,7 +66,7 @@ router.post('/botHandler',function(req, res){
             ]
         }
     ]
-});
+}).end();
 	var len = req.body.inputs.length;
 	for(i=0; i<len; i++){		
 		console.log(req.body.inputs[i].intent);

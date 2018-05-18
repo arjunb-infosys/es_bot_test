@@ -24,6 +24,10 @@ router.get('/login',function(req,res){
 	res.sendFile('public/login.html',{root: __dirname});
 })
 
+router.post('/testingLogin',function(req,res){
+res.json(simpleResponse("Hi, I am leave bot buddy what can I do for you")).end();
+});
+
 router.post('/botHandler',function(req, res){
 		console.log("--------++ sessionId ++---------"+req.session.id);
 console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);

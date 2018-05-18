@@ -19,9 +19,9 @@ router.get('/', function(req, res) {
 
 
 router.post('/botHandler',function(req, res){
-	let referer = req.get('Referer');
+	/*let referer = req.get('Referer');
 	console.log('referer');
-	console.log(referer);
+	console.log(referer);*/
 	var len = req.body.inputs.length;
 	for(i=0; i<len; i++){		
 		console.log(req.body.inputs[i].intent);

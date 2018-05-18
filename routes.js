@@ -48,7 +48,7 @@ console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 			})
 			break;
 		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){	
-				var mySess=req.session;
+				var mySess=req.session.cookie;
 		mySess['1526638805002']={
 			'userName':"hari"
 			,'password':"testVal"

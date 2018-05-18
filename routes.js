@@ -26,7 +26,7 @@ router.get('/login',function(req,res){
 
 router.post('/botHandler',function(req, res){
 		console.log("--------++ sessionId ++---------"+req.session.id);
-console.log("/*/*req.session.userName/*/*"+req.session.userName);
+console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 	console.log('req received');
 	console.log(JSON.stringify(req.body));
 	var len = req.body.inputs.length;
@@ -34,7 +34,7 @@ console.log("/*/*req.session.userName/*/*"+req.session.userName);
 		console.log(req.body.inputs[i].intent);
 		if(req.body.inputs[i].intent == 'actions.intent.TEXT'){
 			
-	console.log("^^^^^^req.session.userName^^^^^^"+req.session.userName);
+	console.log("^^^^^^req.session.userName^^^^^^"+req.body.conversation.uName);
 			dialogflowAPI(req.body.inputs[i].rawInputs[0].query)
 			.then(function(resp){
 				console.log(JSON.stringify(resp.result.fulfillment));
@@ -48,8 +48,8 @@ console.log("/*/*req.session.userName/*/*"+req.session.userName);
 			})
 			break;
 		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){	
-				req.session.userName="srihi";
-	console.log("****req.session.userName*******"+req.session.userName);
+				req.body.conversation.uName="srihi";
+	console.log("****req.session.userName*******"+req.body.conversation.uName);
 			res.json(simpleResponse("Hi, I am leavebody what can I do for you")).end();
 		/*res.send({
 			"conversationToken": "",

@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
   res.redirect("/home.html");
 });
 
-router.post('/login',function(req,res){
+router.get('/login',function(req,res){
 	res.sendFile('public/login.html',{root: __dirname});
 })
 

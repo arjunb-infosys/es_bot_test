@@ -34,7 +34,7 @@ console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 		console.log(req.body.inputs[i].intent);
 		if(req.body.inputs[i].intent == 'actions.intent.TEXT'){
 			
-	console.log("^^^^^^req.session^^^^^^",req.session);
+	console.log("^^^^^^req.session^^^^^^"+JSON.stringify(req.session));
 			dialogflowAPI(req.body.inputs[i].rawInputs[0].query)
 			.then(function(resp){
 				console.log(JSON.stringify(resp.result.fulfillment));
@@ -47,7 +47,9 @@ console.log("/*/*req.session.userName/*/*"+req.body.conversation.uName);
 				
 			})
 			break;
-		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){	
+		}else if(req.body.inputs[i].intent == 'actions.intent.MAIN'){
+			console.log("MAIN INTENTSS");
+			console.log(JSON.stringify(req.session));
 				var mySess=req.session.cookie;
 		mySess['1526638805002']={
 			'userName':"hari"

@@ -18,6 +18,10 @@ router.get('/', function(req, res) {
   res.redirect("/home.html");
 });
 
+router.get('/testing',function(req,res){
+res.send("Success");
+});
+
 router.get('/login',function(req,res){
 	console.log("--------> sessionId <---------"+req.session.id);
 	console.log("////req.session.userName/////"+req.session.userName);
